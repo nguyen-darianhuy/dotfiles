@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/dariann/Misc/Github/polyride'
+let g:netrw_dirhist_2='/Users/dariann/Misc/Github'
+let g:netrw_dirhist_3='/Users/dariann/Misc/Github/polyride'
