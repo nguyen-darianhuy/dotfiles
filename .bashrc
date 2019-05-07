@@ -10,7 +10,7 @@ fi
 
 # User specific aliases and functions
 alias tmux="TERM=screen-256color tmux"
-
+alias cdg="cd ~/Misc/Github"
 # [f]eature [sw]itch [b]ranch
 # Provides nice indexing to pick a branch
 fswb () {
