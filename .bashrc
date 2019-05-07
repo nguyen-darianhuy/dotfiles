@@ -11,6 +11,9 @@ fi
 # User specific aliases and functions
 alias tmux="TERM=screen-256color tmux"
 alias cdg="cd ~/Misc/Github"
+alias cdc="cd ~/Code"
+
+
 # [f]eature [sw]itch [b]ranch
 # Provides nice indexing to pick a branch
 fswb () {
