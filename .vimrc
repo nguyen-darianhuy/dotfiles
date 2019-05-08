@@ -18,7 +18,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Townk/vim-autoclose'
-Bundle 'bogado/file-line'
+Plugin 'bogado/file-line'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " NerdTree Config
 autocmd vimenter * NERDTree | wincmd w
