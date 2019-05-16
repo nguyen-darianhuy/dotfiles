@@ -13,7 +13,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias tmux="TERM=screen-256color tmux"
+alias tmux="TERM=xterm-256color tmux"
 alias cdg="cd ~/Misc/Github"
 alias cdc="cd ~/Code"
 
