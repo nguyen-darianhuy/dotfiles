@@ -20,6 +20,17 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Townk/vim-autoclose'
 Plugin 'bogado/file-line'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'groenewege/vim-less'
+Plugin 'gabrielelana/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'vimwiki/vimwiki'
 
 " NerdTree Config
 autocmd vimenter * NERDTree | wincmd w
@@ -28,6 +39,28 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" CtrlP Config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+" Syntastic Config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Vundle finish setup
 call vundle#end()            " required
@@ -53,6 +86,9 @@ set expandtab
 
 " Always display the status line
 set laststatus=2
+
+" Display filename in status line
+set statusline+=%F
 
 " Enable highlighting of the current line
 set cursorline
