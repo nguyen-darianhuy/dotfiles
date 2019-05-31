@@ -107,3 +107,5 @@ set ruler                      " Shows the current line number at the bottom.
                                " right of the screen.
 set wildmenu                   " Great command-line completion, use '<Tab>' to
                                " move around and '<CR>' to validate.
+set ignorecase
+set smartcase
