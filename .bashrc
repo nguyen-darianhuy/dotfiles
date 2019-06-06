@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
+   eval "$(ssh-agent -s)"
   ssh-add
 fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -16,7 +16,8 @@ fi
 alias tmux="TERM=xterm-256color tmux"
 alias cdg="cd ~/Misc/Github"
 alias cdc="cd ~/Code"
-
+alias gs="clear; git status"
+alias cs="cimpler status"
 
 # [f]eature [sw]itch [b]ranch
 # Provides nice indexing to pick a branch
