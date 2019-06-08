@@ -31,6 +31,10 @@ Plugin 'groenewege/vim-less'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+Plugin 'itchyny/lightline.vim'
 
 " NerdTree Config
 autocmd vimenter * NERDTree | wincmd w
