@@ -35,6 +35,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'itchyny/lightline.vim'
+Plugin 'mattn/emmet-vim'
 
 " NerdTree Config
 autocmd vimenter * NERDTree | wincmd w
