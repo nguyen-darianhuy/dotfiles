@@ -36,6 +36,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'itchyny/lightline.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'Shougo/neocomplete.vim'
 
 " NerdTree Config
 " autocmd vimenter * NERDTree | wincmd w
@@ -86,6 +87,16 @@ function! LightlineFilename()
    return expand('%')
 endfunction
 
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " Vundle finish setup
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -120,6 +131,12 @@ set cursorline
 " 'matchit.vim' is built-in so let's enable it!
 " Hit '%' on 'if' to jump to 'else'.
 runtime macros/matchit.vim
+
+" Disable arrow movement, resize splits instead.
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize -2<CR>
+nnoremap <Right> :vertical resize +2<CR>
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
