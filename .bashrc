@@ -18,6 +18,7 @@ alias cdg="cd ~/Misc/Github"
 alias cdc="cd ~/Code"
 alias gs="clear; git status"
 alias cs="cimpler status"
+alias g="git"
 
 # [f]eature [sw]itch [b]ranch
 # Provides nice indexing to pick a branch
