@@ -17,7 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Townk/vim-autoclose'
 Plugin 'bogado/file-line'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'kien/ctrlp.vim'
@@ -36,7 +35,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'itchyny/lightline.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'lifepillar/vim-mucomplete'
 
 " NerdTree Config
 " autocmd vimenter * NERDTree | wincmd w
@@ -87,15 +86,12 @@ function! LightlineFilename()
    return expand('%')
 endfunction
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" Mucomplete
+set completeopt+=menuone
+set completeopt+=noselect
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+let g:mucomplete#enable_auto_at_startup = 1
 
 " Vundle finish setup
 call vundle#end()            " required
