@@ -36,6 +36,7 @@ Plugin 'elzr/vim-json'
 Plugin 'itchyny/lightline.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'lifepillar/vim-mucomplete'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " NerdTree Config
 " autocmd vimenter * NERDTree | wincmd w
