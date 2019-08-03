@@ -37,6 +37,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'lifepillar/vim-mucomplete'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'prettier/vim-prettier'
+Plugin 'Asheq/close-buffers.vim'
 
 " NerdTree Config
 " autocmd vimenter * NERDTree | wincmd w
