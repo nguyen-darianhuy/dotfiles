@@ -170,3 +170,7 @@ set wildmenu                   " Great command-line completion, use '<Tab>' to
 set splitright
 set ignorecase
 set smartcase
+
+set noswapfile
+set nobackup
+set nowb
