@@ -63,7 +63,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command =
   \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
-nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>p :CtrlPTag<cr>
 
 " Syntastic Config
 set statusline+=%#warningmsg#
@@ -103,6 +103,10 @@ let g:mucomplete#enable_auto_at_startup = 1
 let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#tab_width = 3
 let g:prettier#config#single_quote = 'false'
+nmap <Leader>f <Plug>(Prettier)
+
+" Buffer Closer
+nmap <Leader>cb :CloseHiddenBuffers<cr>
 
 " Vundle finish setup
 call vundle#end()            " required
