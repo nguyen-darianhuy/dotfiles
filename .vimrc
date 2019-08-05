@@ -20,6 +20,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bogado/file-line'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'kien/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-commentary'
@@ -49,6 +50,7 @@ Plugin 'Asheq/close-buffers.vim'
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " CtrlP Config
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -61,6 +63,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command =
   \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
+nnoremap <leader>. :CtrlPTag<cr>
 
 " Syntastic Config
 set statusline+=%#warningmsg#
@@ -95,6 +98,11 @@ set completeopt+=noselect
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
+
+" Prettier
+let g:prettier#config#bracket_spacing = 'false'
+let g:prettier#config#tab_width = 3
+let g:prettier#config#single_quote = 'false'
 
 " Vundle finish setup
 call vundle#end()            " required
