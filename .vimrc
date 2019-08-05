@@ -64,6 +64,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command =
   \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
 nnoremap <leader>p :CtrlPTag<cr>
+nmap <leader>gf :CtrlP<CR><C-\>w
 
 " Syntastic Config
 set statusline+=%#warningmsg#
@@ -143,11 +144,18 @@ set cursorline
 " Hit '%' on 'if' to jump to 'else'.
 runtime macros/matchit.vim
 
+" " Keymappings
 " Disable arrow movement, resize splits instead.
 nnoremap <Up>    :resize +2<CR>
 nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
+" use jj to quickly escape to normal mode while typing
+inoremap jj <ESC>
+" press ; to issue commands in normal mode (no more shift holding)
+nnoremap ; :
+" pressing \<space> clears the search highlights
+nmap <silent> <leader><space> :nohlsearch<CR>
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
