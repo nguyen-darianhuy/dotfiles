@@ -19,7 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bogado/file-line'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
@@ -76,6 +76,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
+
+let g:syntastic_quiet_messages = { 'regex': 'SC2124\|SC2086\|SC2046' }
 
 " Lightline
 let g:lightline = {

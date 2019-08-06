@@ -18,27 +18,7 @@ alias cdg="cd ~/Misc/Github"
 alias cdc="cd ~/Code"
 alias gs="clear; git status"
 alias cs="cimpler status"
+alias cb="cimpler build -b"
 alias g="git"
-
-# [f]eature [sw]itch [b]ranch
-# Provides nice indexing to pick a branch
-fswb () {
-  declare -a brancharray
-  brancharray=($(git branch --list --sort=committerdate | sed 's|[ *]||g' | tac | head -n 20))
-  for ((i=${#brancharray[@]}; i > 0; i--))
-   do
-      printf "%s\t%s\n" "$i)" "${brancharray[$i-1]}";
-   done
-
-   echo "Checkout which branch? (1 - ${#brancharray[@]})"
-
-   read userinput
-   echo #move to a new line
-   if [[ $userinput -lt 1 || $userinput -gt ${#brancharray[@]} ]]
-     then
-        echo "Pick a valid index! :P"
-     else
-       userinput=${userinput}-1
-       feature switch ${brancharray[$userinput]}
-   fi
-}
+alias grc="git rebase --continue"
+alias log="tail -f ~/Code/Logs/me.log"
