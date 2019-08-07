@@ -19,8 +19,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bogado/file-line'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-commentary'
@@ -40,6 +38,7 @@ Plugin 'lifepillar/vim-mucomplete'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'prettier/vim-prettier'
 Plugin 'Asheq/close-buffers.vim'
+Plugin 'junegunn/fzf.vim'
 
 " NerdTree Config
 " autocmd vimenter * NERDTree | wincmd w
@@ -49,22 +48,32 @@ Plugin 'Asheq/close-buffers.vim'
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
-" CtrlP Config
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_user_command =
-  \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
-nnoremap <leader>p :CtrlPTag<cr>
-nmap <leader>gf :CtrlP<CR><C-\>w
+" FZF
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :FZF<cr>
+nnoremap <Leader>p :Tags<cr>
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Comment'],
+  \ 'bg':      ['bg', 'Keyword'],
+  \ 'hl':      ['fg', 'TypeDef'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'TypeDef'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Identifier'],
+  \ 'pointer': ['fg', 'Identifier'],
+  \ 'marker':  ['fg', 'Function'],
+  \ 'spinner': ['fg', 'Function'],
+  \ 'header':  ['fg', 'PreProc'] }
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
 
 " Syntastic Config
 set statusline+=%#warningmsg#
@@ -153,7 +162,7 @@ nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
 " use jj to quickly escape to normal mode while typing
-inoremap jj <ESC>
+inoremap <silent> jj <ESC>
 " press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 " pressing \<space> clears the search highlights
