@@ -51,7 +51,8 @@ Plugin 'junegunn/fzf.vim'
 " FZF
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
+      \ 'ctrl-v': 'vsplit',
+      \ 'ctrl-t': 'tabe'
       \ }
 nnoremap <c-p> :FZF<cr>
 nnoremap <Leader>p :Tags<cr>
@@ -110,6 +111,9 @@ set completeopt+=noselect
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#minimum_prefix_length = 4
+let g:mucomplete#completion_delay = 200
+let g:mucomplete#chains = { 'sql' : [] }
 
 " Prettier
 let g:prettier#config#bracket_spacing = 'false'
