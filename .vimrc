@@ -111,9 +111,9 @@ set completeopt+=noselect
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#minimum_prefix_length = 4
-let g:mucomplete#completion_delay = 200
-let g:mucomplete#chains = { 'sql' : [] }
+let g:mucomplete#minimum_prefix_length = 3
+let g:mucomplete#completion_delay = 50
+let g:mucomplete#chains = { 'sql' : [] } " Turn off annoying SQLComplete error >:(
 
 " Prettier
 let g:prettier#config#bracket_spacing = 'false'
@@ -137,7 +137,12 @@ set background=dark
 colorscheme gruvbox
 
 " Linenumbers
-set number
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 set ruler
 
 " Set proper tabs
@@ -166,11 +171,11 @@ nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
 " use jj to quickly escape to normal mode while typing
-inoremap <silent> jj <ESC>
+inoremap jj <ESC>
 " press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 " pressing \<space> clears the search highlights
-nmap <silent> <leader><space> :nohlsearch<CR>
+nmap <silent> <leader><space> :nohlsearch<CR> :StripWhitespaceOnChangedLines<CR>
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
