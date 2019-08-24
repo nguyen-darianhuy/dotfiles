@@ -1,5 +1,5 @@
 # .bashrc
-
+export PATH="$PATH:/Users/dariann/Misc/Github/flutter/bin"
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
