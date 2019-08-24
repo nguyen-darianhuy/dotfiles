@@ -120,7 +120,9 @@ let g:mucomplete#chains = { 'sql' : [] } " Turn off annoying SQLComplete error >
 " Prettier
 let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#tab_width = 3
-let g:prettier#config#single_quote = 'false'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#trailing_comma = 'all'
+
 nmap <Leader>f <Plug>(Prettier)
 
 " Buffer Closer
@@ -178,6 +180,7 @@ inoremap jj <ESC>
 nnoremap ; :
 " pressing \<space> clears the search highlights
 nmap <silent> <leader><space> :nohlsearch<CR> :StripWhitespaceOnChangedLines<CR>
+tmap <C-g> <C-W>Ngt
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
