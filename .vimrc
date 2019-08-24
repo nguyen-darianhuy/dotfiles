@@ -5,6 +5,7 @@
 " highlighting, omni-completion and other useful settings.
 set nocompatible
 
+" aksjflkahjsdflkajhsdfkjahsdlfjh
 " Vundle
 " set the runtime path to include Vundle and initialize
 filetype off
@@ -39,6 +40,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'prettier/vim-prettier'
 Plugin 'Asheq/close-buffers.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'dart-lang/dart-vim-plugin'
 
 " NerdTree Config
 " autocmd vimenter * NERDTree | wincmd w
