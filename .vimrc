@@ -16,30 +16,38 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
+" Features
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'bogado/file-line'
+Plugin 'tpope/vim-fugitive'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'junegunn/fzf.vim'
+Plugin 'vimwiki/vimwiki'
+
+" Editor Helpers
+Plugin 'Asheq/close-buffers.vim'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'prettier/vim-prettier'
+Plugin 'lifepillar/vim-mucomplete'
+
+" Status Info
+Plugin 'bogado/file-line'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'itchyny/lightline.vim'
+
+" Syntax Highlighting
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'tpope/vim-commentary'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'groenewege/vim-less'
 Plugin 'gabrielelana/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'vimwiki/vimwiki'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
-Plugin 'itchyny/lightline.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'lifepillar/vim-mucomplete'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'prettier/vim-prettier'
-Plugin 'Asheq/close-buffers.vim'
-Plugin 'junegunn/fzf.vim'
 Plugin 'dart-lang/dart-vim-plugin'
 
 " NerdTree Config
