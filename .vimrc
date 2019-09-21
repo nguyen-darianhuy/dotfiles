@@ -197,6 +197,7 @@ set hidden                     " Possibility to have more than one
                                " unsaved buffers.
 set incsearch                  " Incremental search, hit '<CR>' to stop.
 set ruler                      " Shows the current line number at the bottom.
+set hlsearch
                                " right of the screen.
 set wildmenu                   " Great command-line completion, use '<Tab>' to
                                " move around and '<CR>' to validate.
