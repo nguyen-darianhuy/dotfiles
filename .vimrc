@@ -99,6 +99,9 @@ let g:syntastic_javascript_checkers=['eslint']
 
 let g:syntastic_quiet_messages = { 'regex': 'SC2124\|SC2086\|SC2046' }
 
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_python_exec = 'python3'
+
 " Lightline
 let g:lightline = {
       \ 'component_function': {
@@ -130,6 +133,7 @@ let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#tab_width = 3
 let g:prettier#config#semi = 'true'
 let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#single_quote = 'false'
 
 nmap <Leader>f <Plug>(Prettier)
 
