@@ -59,6 +59,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " FZF
+set rtp+=/usr/local/opt/fzf
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit',
