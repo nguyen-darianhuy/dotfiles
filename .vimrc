@@ -51,12 +51,14 @@ Plugin 'elzr/vim-json'
 Plugin 'dart-lang/dart-vim-plugin'
 
 " NerdTree Config
-" autocmd vimenter * NERDTree | wincmd w
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " FZF
 let g:fzf_action = {
@@ -99,6 +101,9 @@ let g:syntastic_javascript_checkers=['eslint']
 
 let g:syntastic_quiet_messages = { 'regex': 'SC2124\|SC2086\|SC2046' }
 
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_python_exec = 'python3'
+
 " Lightline
 let g:lightline = {
       \ 'component_function': {
@@ -130,6 +135,7 @@ let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#tab_width = 3
 let g:prettier#config#semi = 'true'
 let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#single_quote = 'false'
 
 nmap <Leader>f <Plug>(Prettier)
 
@@ -182,8 +188,8 @@ nnoremap <Up>    :resize +2<CR>
 nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
-" use jj to quickly escape to normal mode while typing
-inoremap jj <ESC>
+" use jk to quickly escape to normal mode while typing
+inoremap jk <ESC>
 " press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 " pressing \<space> clears the search highlights
