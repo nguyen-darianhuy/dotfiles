@@ -189,8 +189,8 @@ nnoremap <Up>    :resize +2<CR>
 nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
-" use jj to quickly escape to normal mode while typing
-inoremap jj <ESC>
+" use jk to quickly escape to normal mode while typing
+inoremap jk <ESC>
 " press ; to issue commands in normal mode (no more shift holding)
 nnoremap ; :
 " pressing \<space> clears the search highlights
