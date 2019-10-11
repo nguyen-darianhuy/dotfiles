@@ -49,6 +49,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'styled-components/vim-styled-components'
 
 " NerdTree Config
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
