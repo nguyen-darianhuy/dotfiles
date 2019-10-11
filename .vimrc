@@ -105,6 +105,9 @@ let g:syntastic_quiet_messages = { 'regex': 'SC2124\|SC2086\|SC2046' }
 let g:syntastic_python_checkers = ['python']
 let g:syntastic_python_python_exec = 'python3'
 
+" Markdown Config
+let g:vim_markdown_folding_disabled = 1
+
 " Lightline
 let g:lightline = {
       \ 'component_function': {
@@ -211,6 +214,8 @@ set wildmenu                   " Great command-line completion, use '<Tab>' to
 set splitright
 set ignorecase
 set smartcase
+
+set conceallevel=2
 
 set noswapfile
 set nobackup
