@@ -20,6 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-obsession'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vimwiki/vimwiki'
@@ -44,11 +45,12 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'tpope/vim-commentary'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
-Plugin 'gabrielelana/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'styled-components/vim-styled-components'
 
 " NerdTree Config
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -61,6 +63,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 " FZF
+set rtp+=/usr/local/opt/fzf
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit',
@@ -103,6 +106,9 @@ let g:syntastic_quiet_messages = { 'regex': 'SC2124\|SC2086\|SC2046' }
 
 let g:syntastic_python_checkers = ['python']
 let g:syntastic_python_python_exec = 'python3'
+
+" Markdown Config
+let g:vim_markdown_folding_disabled = 1
 
 " Lightline
 let g:lightline = {
@@ -210,6 +216,8 @@ set wildmenu                   " Great command-line completion, use '<Tab>' to
 set splitright
 set ignorecase
 set smartcase
+
+set conceallevel=2
 
 set noswapfile
 set nobackup
