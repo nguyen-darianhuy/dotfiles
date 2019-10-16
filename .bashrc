@@ -1,10 +1,6 @@
 # .bashrc
 export PATH="$PATH:/Users/dariann/Misc/Github/flutter/bin"
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
 if [ -z "$SSH_AUTH_SOCK" ] ; then
    eval "$(ssh-agent -s)"
   ssh-add
@@ -24,28 +20,24 @@ alias grc="git rebase --continue"
 alias log="tail -f ~/Code/Logs/me.log"
 alias glog="git log --oneline"
 
-alias gg="git grep --line-number"
+alias gg="git grep -I --line-number"
 
 # [f]eature [sw]itch [b]ranch
-# Provides nice indexing to pick a branch
-fswb () {
-  declare -a brancharray
-  brancharray=($(git branch --list --sort=committerdate | sed 's|[ *]||g' | tac | head -n 20))
-  for ((i=${#brancharray[@]}; i > 0; i--))
-   do
-      printf "%s\t%s\n" "$i)" "${brancharray[$i-1]}";
+# Switches between recent branches.
+fswb() {
+   branches=($(git for-each-ref --format="%(refname:short)" --sort=-committerdate --count 9 refs/heads/))
+   num_branches=${#branches[@]}
+   for ((i=$num_branches; i > 0; i--)); do
+      printf "%1d) %s\n" $i "${branches[$i-1]}"
    done
 
-   echo "Checkout which branch? (1 - ${#brancharray[@]})"
+   read -p "Checkout which branch (1–$num_branches)? " -n1 choice
+   echo
 
-   read userinput
-   echo #move to a new line
-   if [[ $userinput -lt 1 || $userinput -gt ${#brancharray[@]} ]]
-     then
-        echo "Pick a valid index! :P"
-     else
-       userinput=${userinput}-1
-       feature switch ${brancharray[$userinput]}
+   if [[ $choice -lt 1 || $choice -gt $num_branches ]]; then
+      echo "Pick a valid index! :P"
+   else
+      git checkout ${branches[$choice-1]}
    fi
 }
 
@@ -57,5 +49,15 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+ # Shell Variable Configuration
+ RED="\[\033[31m\]"
+ GRE="\[\033[32m\]"
+ YEL="\[\033[33m\]"
+ BLU="\[\033[34m\]"
+ PUR="\[\033[35m\]"
+ WHI="\[\033[37m\]"
+ NUL="\[\033[0m\]"
 
-export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+ export PS1="${BLU}\u${WHI}@${PUR}\H ${GRE}\t ${PUR}\W${NUL} > "
+ export PS1="${BLU}\u${WHI}@${PUR}\H ${YEL}\$(parse_git_branch \" (%s)\") ${GRE}\t ${PUR}\W${NUL} > "
+ export SHELL=/bin/bash
