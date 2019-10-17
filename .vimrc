@@ -24,6 +24,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Editor Helpers
 Plugin 'Asheq/close-buffers.vim'
