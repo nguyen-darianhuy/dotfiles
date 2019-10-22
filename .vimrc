@@ -62,6 +62,9 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeMapOpenInTab = '<C-t>'
+let NERDTreeMapOpenVSplit = '<C-v>'
+let NERDTreeMapOpenSplit = '<C-s>'
 
 " FZF
 set rtp+=/usr/local/opt/fzf
