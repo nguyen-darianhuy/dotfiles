@@ -159,6 +159,8 @@ filetype plugin indent on    " required
 " Syntax Highlighting
 syntax on
 set encoding=utf8
+autocmd BufEnter *.{ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{ts,tsx} :syntax sync clear
 
 " Color Theme
 set background=dark
