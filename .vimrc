@@ -141,11 +141,11 @@ let g:mucomplete#completion_delay = 50
 let g:mucomplete#chains = { 'sql' : [] } " Turn off annoying SQLComplete error >:(
 
 " Prettier
-let g:prettier#config#bracket_spacing = 'false'
+let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#tab_width = 3
 let g:prettier#config#semi = 'true'
 let g:prettier#config#trailing_comma = 'all'
-let g:prettier#config#single_quote = 'false'
+let g:prettier#config#single_quote = 'true'
 
 nmap <Leader>f <Plug>(Prettier)
 
