@@ -153,6 +153,18 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" gd - go to definition of word under cursor
+nmap <silent> gd <Plug>(coc-definition)
+
+" gi - go to implementation
+nmap <silent> gi <Plug>(coc-implementation)
+
+" gr - find references
+nmap <silent> gr <Plug>(coc-references)
+
 " Prettier
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#tab_width = 3
@@ -241,7 +253,6 @@ set noswapfile
 set nobackup
 set nowb
 
-set cmdheight=2                " Taller cmd display
 set updatetime=300
 
 " Use K to show documentation in preview window
