@@ -225,6 +225,7 @@ set noswapfile
 set nobackup
 set nowb
 
+set cmdheight=2                " Taller cmd display
 set updatetime=300
 
 " Use K to show documentation in preview window
