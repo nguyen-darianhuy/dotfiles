@@ -5,61 +5,53 @@
 " highlighting, omni-completion and other useful settings.
 set nocompatible
 
-" aksjflkahjsdflkajhsdfkjahsdlfjh
-" Vundle
-" set the runtime path to include Vundle and initialize
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Vim-Plug
+call plug#begin('~/.vim/plugged')
 
 " Plugins
 " Features
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-obsession'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'junegunn/fzf.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'ludovicchabant/vim-gutentags'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Editor Helpers
-Plugin 'Asheq/close-buffers.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'prettier/vim-prettier'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
+Plug 'Asheq/close-buffers.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'prettier/vim-prettier'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 " Status Info
-Plugin 'bogado/file-line'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'itchyny/lightline.vim'
+Plug 'bogado/file-line'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 
 " Syntax Highlighting
-Plugin 'vim-syntastic/syntastic'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'tpope/vim-commentary'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'groenewege/vim-less'
-Plugin 'ap/vim-css-color'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'elzr/vim-json'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'styled-components/vim-styled-components'
+Plug 'vim-syntastic/syntastic'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'tpope/vim-commentary'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'groenewege/vim-less'
+Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" Initialize plugin system
+call plug#end()
 
 " NerdTree Config
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
@@ -148,15 +140,9 @@ nmap <Leader>f <Plug>(Prettier)
 " Buffer Closer
 nmap <Leader>cb :CloseHiddenBuffers<cr>
 
-" Vundle finish setup
-call vundle#end()            " required
-filetype plugin indent on    " required
-
 " Syntax Highlighting
 syntax on
 set encoding=utf8
-autocmd BufEnter *.{ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{ts,tsx} :syntax sync clear
 
 " Color Theme
 set background=dark
@@ -168,7 +154,14 @@ augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+  " Syntax Highlighting
+  autocmd BufEnter *.{ts,tsx} :syntax sync fromstart
+  autocmd BufLeave *.{ts,tsx} :syntax sync clear
+  " NERDTree Config
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+ augroup END
 set ruler
 
 " Set proper tabs
@@ -182,7 +175,6 @@ set laststatus=2
 
 " Display filename in status line
 set statusline+=%F
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')} " and coc.nvim info
 
 " Enable highlighting of the current line
 set cursorline
@@ -226,16 +218,4 @@ set noswapfile
 set nobackup
 set nowb
 
-set cmdheight=2                " Taller cmd display
 set updatetime=300
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
