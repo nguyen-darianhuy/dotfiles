@@ -177,20 +177,20 @@ colorscheme gruvbox
 
 " Linenumbers
 set number relativenumber
-" augroup numbertoggle
-"   autocmd!
-"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-"   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-"   " Syntax Highlighting
-"   autocmd BufEnter *.{ts,tsx} :syntax sync fromstart
-"   autocmd BufLeave *.{ts,tsx} :syntax sync clear
-"   " NERDTree Config
-"   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"   autocmd StdinReadPre * let s:std_in=1
-"   autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-"   " Highlight symbol under cursor on CursorHold
-"   autocmd CursorHold * silent call CocActionAsync('highlight')
-" augroup END
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  " Syntax Highlighting
+  autocmd BufEnter *.{ts,tsx} :syntax sync fromstart
+  autocmd BufLeave *.{ts,tsx} :syntax sync clear
+  " NERDTree Config
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  " Highlight symbol under cursor on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
 set ruler
 
 " Set proper tabs
