@@ -31,12 +31,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'bogado/file-line'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-commentary'
 
 " Syntax Highlighting
 Plug 'vim-syntastic/syntastic'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'tpope/vim-commentary'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'groenewege/vim-less'
 Plug 'plasticboy/vim-markdown'
@@ -165,7 +165,7 @@ let g:prettier#config#single_quote = 'true'
 nmap <Leader>f <Plug>(Prettier)
 
 " Buffer Closer
-nmap <Leader>cb :CloseHiddenBuffers<cr>
+nmap <Leader>cb :Bdelete hidden<cr>
 
 " Syntax Highlighting
 syntax on
