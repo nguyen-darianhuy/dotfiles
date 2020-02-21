@@ -226,6 +226,10 @@ nnoremap ; :
 " pressing \<space> clears the search highlights
 nmap <silent> <leader><space> :nohlsearch<CR> :StripWhitespaceOnChangedLines<CR>
 tmap <C-g> <C-W>Ngt
+" delete and paste to the black hole register instead of the yank
+nnoremap d "_d
+xnoremap d "_d
+xnoremap p "_dP
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
