@@ -28,6 +28,7 @@ Plug 'prettier/vim-prettier'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'dense-analysis/ale'
 
 " Status Info
 Plug 'bogado/file-line'
@@ -129,6 +130,10 @@ endfunction
 let g:deoplete#enable_at_startup = 1
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" ALE Linting
+let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['stylelint', 'eslint'], 'typescript': [] }
+let g:ale_open_list = 'on_save'
 
 " Prettier
 let g:prettier#config#bracket_spacing = 'true'
