@@ -132,7 +132,7 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " ALE Linting
-let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['stylelint', 'eslint'], 'typescript': [] }
+let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['stylelint', 'eslint'], 'typescript': [], 'less': [], 'phtml': [] }
 let g:ale_open_list = 'on_save'
 
 " Prettier
