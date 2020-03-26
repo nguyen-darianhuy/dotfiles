@@ -142,7 +142,8 @@ let g:prettier#config#semi = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#single_quote = 'true'
 
-nmap <Leader>f <Plug>(Prettier)
+nmap <Leader>f <Plug>(PrettierAsync)
+xnoremap <Leader>f :PrettierPartial<CR>
 
 " Buffer Closer
 nmap <Leader>cb :Bdelete hidden<cr>
