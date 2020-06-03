@@ -1,4 +1,5 @@
 # .bashrc
+export PATH=$PATH:/usr/local/mysql/bin/
 export PATH="$PATH:/Users/dariann/Misc/Github/flutter/bin"
 # Source global definitions
 if [ -z "$SSH_AUTH_SOCK" ] ; then
