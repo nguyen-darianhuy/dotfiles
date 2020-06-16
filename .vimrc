@@ -34,17 +34,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 
 " Syntax Highlighting
-Plug 'vim-syntastic/syntastic'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'groenewege/vim-less'
-Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'elzr/vim-json'
-Plug 'dart-lang/dart-vim-plugin'
+Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
