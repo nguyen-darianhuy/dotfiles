@@ -180,6 +180,9 @@ augroup numbertoggle
   autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
+  " Open term and flip if vim is opened with No Name
+  autocmd VimEnter * if (@% == "") | vert term
+  autocmd VimEnter * wincmd r
 augroup END
 set ruler
 
