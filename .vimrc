@@ -166,7 +166,7 @@ set encoding=utf8
 
 " Color Theme
 set background=dark
-colorscheme gruvbox
+color gruvbox
 
 " Linenumbers
 set number relativenumber
@@ -174,9 +174,6 @@ augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-  " Syntax Highlighting
-  autocmd BufEnter *.{ts,tsx} :syntax sync fromstart
-  autocmd BufLeave *.{ts,tsx} :syntax sync clear
   " NERDTree Config
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd StdinReadPre * let s:std_in=1
