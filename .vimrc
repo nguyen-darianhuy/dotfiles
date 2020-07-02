@@ -18,6 +18,7 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mhinz/vim-grepper'
 
 " Editor Helpers
 Plug 'Asheq/close-buffers.vim'
@@ -79,22 +80,8 @@ command! -bang -nargs=* GGrep
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 
-
-" Syntastic Config
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_javascript_checkers=['eslint']
-
-" let g:syntastic_quiet_messages = { 'regex': 'SC2124\|SC2086\|SC2046' }
-
-" let g:syntastic_python_checkers = ['python']
-" let g:syntastic_python_python_exec = 'python3'
+" vim-grepper
+nnoremap <c-g> :Grepper -tool ag -highlight<CR>
 
 " Markdown Config
 let g:vim_markdown_folding_disabled = 1
