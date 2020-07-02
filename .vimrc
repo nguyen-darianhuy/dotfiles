@@ -171,7 +171,7 @@ augroup numbertoggle
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
   " Open term and flip if vim is opened with No Name
-  autocmd VimEnter * if (@% == "") | vert term
+  autocmd VimEnter * if (@% == "") | wincmd v | vert term
   autocmd VimEnter * wincmd r
 augroup END
 set ruler
@@ -213,6 +213,11 @@ tmap <C-g> <C-W>Ngt
 nnoremap d "_d
 xnoremap d "_d
 xnoremap p "_dP
+" Neovim exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-w> <C-\><C-n><C-w>
+tnoremap :q! <C-\><C-n>:q!<CR>
+
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
