@@ -36,7 +36,6 @@ alias g="git"
 alias grc="git rebase --continue"
 alias log="tail -f ~/Code/Logs/me.log"
 alias glog="git log --oneline"
-alias gprune="git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d"
 alias vim="nvim"
 
 alias gg="git grep -I --line-number"

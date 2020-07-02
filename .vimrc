@@ -159,8 +159,6 @@ color gruvbox
 set number relativenumber
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
   " Syntax Highlighting
   autocmd BufEnter *.{jsx,ts,tsx} :syntax sync fromstart
   autocmd BufLeave *.{jsx,ts,tsx} :syntax sync clear
