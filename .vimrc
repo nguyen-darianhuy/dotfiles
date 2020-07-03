@@ -182,8 +182,9 @@ augroup numbertoggle
   " Highlight symbol under cursor on CursorHold
   autocmd CursorHold * silent call CocActionAsync('highlight')
   " Open term and flip if vim is opened with No Name
-  autocmd VimEnter * if (@% == "") | wincmd v | vert term
+  autocmd VimEnter * if (@% == "") | vsplit | terminal
   autocmd VimEnter * wincmd r
+  au TermOpen * setlocal listchars= nonumber norelativenumber
 
   autocmd BufWinEnter,WinEnter term://* startinsert
 
