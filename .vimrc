@@ -27,6 +27,13 @@ Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 't9md/vim-textmanip'
+Plug 'christoomey/vim-system-copy'
+Plug 'tpope/vim-repeat'
+Plug 'rhysd/clever-f.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'mtth/locate.vim'
+Plug 'chaoren/vim-wordmotion'
 
 " Status Info
 Plug 'bogado/file-line'
@@ -82,6 +89,12 @@ command! -bang -nargs=* GGrep
 
 " vim-grepper
 nnoremap <c-g> :Grepper -tool ag -highlight<CR>
+
+" vim-manip
+xmap <C-j> <Plug>(textmanip-move-down)
+xmap <C-k> <Plug>(textmanip-move-up)
+xmap <C-h> <Plug>(textmanip-move-left)
+xmap <C-l> <Plug>(textmanip-move-right)
 
 " Markdown Config
 let g:vim_markdown_folding_disabled = 1
