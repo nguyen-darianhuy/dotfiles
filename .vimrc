@@ -184,6 +184,15 @@ augroup numbertoggle
   " Open term and flip if vim is opened with No Name
   autocmd VimEnter * if (@% == "") | wincmd v | vert term
   autocmd VimEnter * wincmd r
+
+  autocmd BufWinEnter,WinEnter term://* startinsert
+
+  " Ignore various filetypes as those will close terminal automatically
+  " Ignore fzf, ranger, coc
+  autocmd TermClose term://*
+      \ if (expand('<afile>') !~ "fzf") && (expand('<afile>') !~ "ranger") && (expand('<afile>') !~ "coc") |
+      \   call nvim_input('<CR>')  |
+      \ endif
 augroup END
 set ruler
 
