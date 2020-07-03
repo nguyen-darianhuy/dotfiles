@@ -16,6 +16,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User config
 
+# Stop pipin to less every command
+unset LESS;
+
 # Disable showing user name on local
 prompt_context() {}
 
