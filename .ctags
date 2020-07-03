@@ -1,4 +1,6 @@
 --exclude=.git
+--exclude=.next
+--exclude=build
 --exclude=.cache
 --exclude=.composer
 --exclude=.config
