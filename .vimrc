@@ -193,6 +193,8 @@ augroup numbertoggle
       \ if (expand('<afile>') !~ "fzf") && (expand('<afile>') !~ "ranger") && (expand('<afile>') !~ "coc") |
       \   call nvim_input('<CR>')  |
       \ endif
+
+  autocmd FileType qf nnoremap <buffer><silent> <C-c> :quit<cr>
 augroup END
 set ruler
 
