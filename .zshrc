@@ -10,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # oh-my-zsh plugins
-plugins=(branch git-prune)
+plugins=(branch git-prune git)
 
 source $ZSH/oh-my-zsh.sh
 

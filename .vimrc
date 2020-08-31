@@ -97,6 +97,9 @@ xmap <C-k> <Plug>(textmanip-move-up)
 xmap <C-h> <Plug>(textmanip-move-left)
 xmap <C-l> <Plug>(textmanip-move-right)
 
+" clever-f
+let g:clever_f_across_no_line = 1
+
 " Markdown Config
 let g:vim_markdown_folding_disabled = 1
 
