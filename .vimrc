@@ -34,6 +34,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'mtth/locate.vim'
 Plug 'chaoren/vim-wordmotion'
+Plug 'AndrewRadev/tagalong.vim'
 
 " Status Info
 Plug 'bogado/file-line'
