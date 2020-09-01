@@ -1,7 +1,7 @@
 # Paths
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/mysql/bin/
-export ZSH="/Users/dariann/.oh-my-zsh"
+export ZSH="/Users/darian/.oh-my-zsh"
 
 # oh-my-zsh config
 ZSH_THEME="agnoster"
