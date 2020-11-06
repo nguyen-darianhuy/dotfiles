@@ -177,8 +177,7 @@ set number relativenumber
 augroup numbertoggle
   autocmd!
   " Syntax Highlighting
-  autocmd BufEnter *.{jsx,ts,tsx} :syntax sync fromstart
-  autocmd BufLeave *.{jsx,ts,tsx} :syntax sync clear
+  autocmd BufEnter *.{jsx,ts,tsx} :syntax sync clear | :syntax sync fromstart
   " NERDTree Config
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd StdinReadPre * let s:std_in=1
