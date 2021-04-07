@@ -15,5 +15,9 @@ My personal dotfiles setup with:
       - iTerm2 -> Preferences -> Profiles -> Colors -> Color Presets... -> Import -> Gruvbox Dark.itermcolors
    4c. install [powerline fonts](https://github.com/powerline/fonts#quick-installation)
       - iTerm2 -> Preferences -> Profiles -> Text -> Font -> Meslo LG M for Powerline
-5. (OPTIONAL) hide public github email
-   - run `git config --global user.email “your-username@users.noreply.github.com”`
+5. install [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux)
+6. install [vim-plug](https://github.com/junegunn/vim-plug#neovim)
+7. install [node](https://nodejs.org/en/download/package-manager/#macos)
+8. install [git-prune](https://github.com/diazod/git-prune#oh-my-zsh)
+9. (OPTIONAL) hide public github email
+   - `$ git config --global user.email “your-username@users.noreply.github.com”`
