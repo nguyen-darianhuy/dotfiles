@@ -19,5 +19,7 @@ My personal dotfiles setup with:
 6. install [vim-plug](https://github.com/junegunn/vim-plug#neovim)
 7. install [node](https://nodejs.org/en/download/package-manager/#macos)
 8. install [git-prune](https://github.com/diazod/git-prune#oh-my-zsh)
-9. (OPTIONAL) hide public github email
+9. install [ag](https://github.com/ggreer/the_silver_searcher#macos)
+10. install [tmux](https://formulae.brew.sh/formula/tmux)
+11. (OPTIONAL) hide public github email
    - `$ git config --global user.email “your-username@users.noreply.github.com”`
