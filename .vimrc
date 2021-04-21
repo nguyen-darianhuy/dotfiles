@@ -18,7 +18,6 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'mhinz/vim-grepper'
 
 " Editor Helpers
 Plug 'Asheq/close-buffers.vim'
@@ -67,8 +66,10 @@ let g:fzf_action = {
       \ 'ctrl-v': 'vsplit',
       \ 'ctrl-t': 'tabe'
       \ }
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-p> :GFiles<cr>
 nnoremap <Leader>p :Tags<cr>
+nnoremap <c-g> :Rg<cr>
+
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Comment'],
   \ 'bg':      ['bg', 'Keyword'],
@@ -87,9 +88,6 @@ command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
-
-" vim-grepper
-nnoremap <c-g> :Grepper -tool ag -highlight<CR>
 
 " vim-manip
 xmap <C-j> <Plug>(textmanip-move-down)
