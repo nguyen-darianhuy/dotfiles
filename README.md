@@ -23,7 +23,8 @@ My personal dotfiles setup with:
 8. install [git-prune](https://github.com/diazod/git-prune#oh-my-zsh)
 9. install [rg](https://github.com/BurntSushi/ripgrep#installation)
 10. install [tmux](https://formulae.brew.sh/formula/tmux)
-11. install [ctags](https://formulae.brew.sh/formula/ctags)
-12. run `$ git config --global core.excludesfile ~/.gitignore_global`
-13. (OPTIONAL) hide public github email
+11. install [ctags](https://formulae.brew.sh/formula/ctags) 
+12. ignore tags `$ git config --global core.excludesfile ~/.gitignore_global`
+13. set nvim as default git editor `$ git config --global core.editor "nvim"`
+14. (OPTIONAL) hide public github email
    - `$ git config --global user.email “your-username@users.noreply.github.com”`
