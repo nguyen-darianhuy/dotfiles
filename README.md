@@ -17,9 +17,13 @@ My personal dotfiles setup with:
       - iTerm2 -> Preferences -> Profiles -> Text -> Font -> Meslo LG M for Powerline
 5. install [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux)
 6. install [vim-plug](https://github.com/junegunn/vim-plug#neovim)
+   6a. install plugins `:PlugInstall`
+   6b. install coc extensions `:CocInstall coc-json coc-tsserver`
 7. install [node](https://nodejs.org/en/download/package-manager/#macos)
 8. install [git-prune](https://github.com/diazod/git-prune#oh-my-zsh)
-9. install [ag](https://github.com/ggreer/the_silver_searcher#macos)
+9. install [rg](https://github.com/BurntSushi/ripgrep#installation)
 10. install [tmux](https://formulae.brew.sh/formula/tmux)
-11. (OPTIONAL) hide public github email
+11. install [ctags](https://formulae.brew.sh/formula/ctags)
+12. run `$ git config --global core.excludesfile ~/.gitignore_global`
+13. (OPTIONAL) hide public github email
    - `$ git config --global user.email “your-username@users.noreply.github.com”`
