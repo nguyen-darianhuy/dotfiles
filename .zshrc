@@ -9,6 +9,9 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# connecting ctags to brew's ctags install dir
+alias ctags="`brew --prefix`/bin/ctags"
+
 # oh-my-zsh plugins
 plugins=(branch git-prune git)
 
